@@ -24,13 +24,13 @@ const { title } = Astro.props;
 		<meta property="og:url" content="https://ayayay555.github.io/Piggery/" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content="Premium backyard-raised pigs in Caduhaan, Cadiz City. Naturally raised, healthy livestock." />
-		<meta property="og:image" content={`${import.meta.env.BASE_URL}/images/60818bea46deb36f46cf3c39a105d0fa.jpg`} />
+		<meta property="og:image" content={`${import.meta.env.BASE_URL}/images/logo.png`} />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content="Premium backyard-raised pigs in Caduhaan, Cadiz City. Naturally raised, healthy livestock." />
-		<meta property="twitter:image" content={`${import.meta.env.BASE_URL}/images/60818bea46deb36f46cf3c39a105d0fa.jpg`} />
+		<meta property="twitter:image" content={`${import.meta.env.BASE_URL}/images/logo.png`} />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@ const { title } = Astro.props;
 		<header class="site-header">
 			<div class="container header-container">
 				<a href={import.meta.env.BASE_URL} class="logo-wrapper">
-					<div class="header-logo"></div>
+					<img src={`${import.meta.env.BASE_URL}/images/logo.png`} alt="Backyard Piggery Logo" class="header-logo" />
 					<span class="logo-text">Backyard Piggery</span>
 				</a>
 				<nav class="site-nav">
@@ -128,22 +128,14 @@ const { title } = Astro.props;
 		text-decoration: none;
 	}
 	.header-logo {
-		height: 48px;
-		width: 60px;
-		background-color: var(--secondary);
-		-webkit-mask-image: url('/images/TRfKK.jpg');
-		mask-image: url('/images/TRfKK.jpg');
-		-webkit-mask-size: contain;
-		mask-size: contain;
-		-webkit-mask-repeat: no-repeat;
-		mask-repeat: no-repeat;
-		-webkit-mask-position: center;
-		mask-position: center;
-		transition: transform 0.3s ease, background-color 0.3s ease;
+		height: 50px;
+		width: auto;
+		transition: transform 0.3s ease;
+		/* Professional filter to turn black PNG into Golden Wheat color */
+		filter: brightness(0) saturate(100%) invert(85%) sepia(21%) saturate(615%) hue-rotate(351deg) brightness(96%) contrast(88%);
 	}
 	.logo-wrapper:hover .header-logo {
 		transform: scale(1.1) rotate(-3deg);
-		background-color: var(--accent);
 	}
 	.logo-text {
 		color: var(--secondary);
