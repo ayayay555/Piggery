@@ -39,7 +39,10 @@ const { title } = Astro.props;
 	<body>
 		<header class="site-header">
 			<div class="container header-container">
-				<a href={import.meta.env.BASE_URL} class="logo">Backyard Piggery</a>
+				<a href={import.meta.env.BASE_URL} class="logo-wrapper">
+					<img src={`${import.meta.env.BASE_URL}/images/TRfKK.jpg`} alt="Backyard Piggery Logo" class="header-logo" width="50" height="50" />
+					<span class="logo-text">Backyard Piggery</span>
+				</a>
 				<nav class="site-nav">
 					<a href={`${import.meta.env.BASE_URL}/#about`}>About Us</a>
 					<a href={`${import.meta.env.BASE_URL}/#contact`}>Contact Us</a>
@@ -103,11 +106,11 @@ const { title } = Astro.props;
 	.site-header {
 		background-color: var(--primary);
 		color: var(--white);
-		padding: 1rem 0;
+		padding: 0.75rem 0;
 		position: sticky;
 		top: 0;
 		z-index: 1000;
-		box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 		border-bottom: 4px solid var(--secondary);
 	}
 	.header-container {
@@ -118,12 +121,27 @@ const { title } = Astro.props;
 		max-width: 1100px;
 		margin: 0 auto;
 	}
-	.logo {
+	.logo-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		text-decoration: none;
+	}
+	.header-logo {
+		border-radius: 8px;
+		border: 2px solid var(--secondary);
+		/* Subtle sepia/warm filter to make the JPG match the rustic theme */
+		filter: sepia(0.2) contrast(1.1);
+		transition: transform 0.3s ease;
+	}
+	.logo-wrapper:hover .header-logo {
+		transform: scale(1.05) rotate(-2deg);
+	}
+	.logo-text {
 		color: var(--secondary);
 		font-family: 'Bricolage Grotesque', sans-serif;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 		font-weight: 700;
-		text-decoration: none;
 		letter-spacing: 0.5px;
 	}
 	.site-nav a {
@@ -133,6 +151,9 @@ const { title } = Astro.props;
 		font-weight: 600;
 		font-family: 'Inter', sans-serif;
 		transition: color 0.3s ease;
+		font-size: 0.95rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
 	}
 	.site-nav a:hover {
 		color: var(--secondary);
