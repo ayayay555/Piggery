@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://caduhaanpiggery.com',
+  site: 'https://ayayay555.github.io',
+  base: '/Piggery',
   output: 'static',
 });
