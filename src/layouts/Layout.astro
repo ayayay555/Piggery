@@ -11,7 +11,7 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/jpeg" href={`${import.meta.env.BASE_URL}/images/TRfKK.jpg`} />
+		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
 		<meta name="generator" content={Astro.generator} />
 		
 		<!-- Primary Meta Tags -->
@@ -40,7 +40,7 @@ const { title } = Astro.props;
 		<header class="site-header">
 			<div class="container header-container">
 				<a href={import.meta.env.BASE_URL} class="logo-wrapper">
-					<img src={`${import.meta.env.BASE_URL}/images/TRfKK.jpg`} alt="Backyard Piggery Logo" class="header-logo" />
+					<div class="header-logo"></div>
 					<span class="logo-text">Backyard Piggery</span>
 				</a>
 				<nav class="site-nav">
@@ -206,6 +206,30 @@ const { title } = Astro.props;
 	@media (max-width: 768px) {
 		.header-container {
 			flex-direction: column;
+			gap: 1rem;
+		}
+		.site-nav a {
+			margin: 0 0.75rem;
+		}
+		.footer-container {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+		.footer-contact p {
+			justify-content: center;
+		}
+	}
+</style>75rem;
+		}
+		.footer-container {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+		.footer-contact p {
+			justify-content: center;
+		}
+	}
+</style>n;
 			gap: 1rem;
 		}
 		.site-nav a {
