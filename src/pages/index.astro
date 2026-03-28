@@ -234,8 +234,48 @@ import Layout from '../layouts/Layout.astro';
 	.testimonial-card::before { content: '"'; font-size: 4rem; color: var(--secondary); opacity: 0.3; position: absolute; top: 10px; left: 20px; font-family: serif; }
 	.client-name { display: block; margin-top: 1.5rem; font-weight: bold; color: var(--secondary); font-style: normal; }
 
+	/* Price Table */
+	.price-table-wrapper { margin-top: 3rem; background: var(--white); padding: 30px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+	.price-table { width: 100%; border-collapse: collapse; text-align: left; }
+	.price-table th { background: var(--primary); color: white; padding: 15px; font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+	.price-table td { padding: 20px 15px; border-bottom: 1px solid #eee; font-family: 'Lora', serif; }
+	.price-table tr:last-child td { border-bottom: none; }
+	.price-disclaimer { margin-top: 1.5rem; font-size: 0.85rem; font-style: italic; opacity: 0.7; }
+
+	/* Location & Map */
+	.location-details { list-style: none; padding: 0; margin: 2rem 0; }
+	.location-details li { margin-bottom: 1rem; font-size: 1.1rem; }
+	.secondary-cta { background: var(--primary) !important; box-shadow: 0 4px 0 #1a2a14 !important; margin-top: 1rem; display: inline-block; }
+	.secondary-cta:hover { background: #1a2a14 !important; }
+
 	/* FAQ */
 	.faq-item { text-align: left; margin-bottom: 2rem; background: var(--white); padding: 25px; border-radius: 12px; border-left: 6px solid var(--accent); box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+	.faq-item h3 { color: var(--primary); margin-bottom: 0.7rem; font-size: 1.3rem; margin-top: 0; }
+	.faq-item p { margin-bottom: 0; }
+
+	/* Final CTA Section */
+	.contact-cta { text-align: center; border-top: 1px solid rgba(0,0,0,0.1); }
+	.cta-box { margin-top: 2.5rem; }
+	.cta-button.large { font-size: 1.3rem; padding: 22px 50px; display: inline-block; }
+	.small-note { margin-top: 1rem; font-size: 0.9rem; opacity: 0.7; font-style: italic; }
+
+	/* Buttons */
+	.hero-actions { display: flex; gap: 15px; justify-content: center; margin-top: 2rem; }
+	.cta-button { background: var(--accent); color: white !important; padding: 18px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 4px 0 #c05a3f; border: none; cursor: pointer; }
+	.cta-button:hover { background: #d96246; transform: translateY(2px); box-shadow: 0 2px 0 #c05a3f; }
+	.secondary-button { background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); color: white; padding: 18px 40px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem; border: 2px solid white; transition: 0.3s; }
+	.secondary-button:hover { background: white; color: var(--primary); }
+
+	@media (max-width: 768px) {
+		.grid-2 { grid-template-columns: 1fr; text-align: center; }
+		.hero h1 { font-size: 2.8rem; }
+		.hero-actions { flex-direction: column; }
+		.testimonial-grid { grid-template-columns: 1fr; }
+		.section { padding: 60px 20px; }
+		.rounded-img { box-shadow: 10px 10px 0 var(--secondary); }
+		.cta-button.large { width: 100%; padding: 20px 20px; font-size: 1.1rem; }
+	}
+</style>px; border-left: 6px solid var(--accent); box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
 	.faq-item h3 { color: var(--primary); margin-bottom: 0.7rem; font-size: 1.3rem; margin-top: 0; }
 	.faq-item p { margin-bottom: 0; }
 
