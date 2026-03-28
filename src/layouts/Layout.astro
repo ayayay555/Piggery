@@ -56,12 +56,13 @@ const { title } = Astro.props;
 			<div class="container footer-container">
 				<div class="footer-info">
 					<h3>Backyard Piggery</h3>
-					<p>Honest, natural, and trusted by the local community.</p>
+					<p>Raising quality livestock with natural care in the heart of Cadiz City. Honest, transparent, and trusted by the local community for years.</p>
 				</div>
 				<div class="footer-contact">
-					<h4>Contact Us</h4>
+					<h4>Contact Details</h4>
 					<p>📞 <a href="tel:09852571859">09852571859</a></p>
 					<p>📍 Brgy. Caduhaan, Cadiz City</p>
+					<p>⏰ 7:00 AM - 5:00 PM Daily</p>
 				</div>
 			</div>
 			<div class="footer-bottom">
@@ -176,29 +177,70 @@ const { title } = Astro.props;
 	.site-footer {
 		background-color: var(--primary);
 		color: var(--white);
-		padding: 3rem 0 1.5rem;
+		padding: 4rem 0 2rem;
 		margin-top: auto;
 		border-top: 6px solid var(--secondary);
 	}
 	.footer-container {
 		display: grid;
 		grid-template-columns: 1fr; /* 1 col on mobile */
-		gap: 2rem;
+		gap: 3rem;
 		padding: 0 20px;
 		max-width: 1100px;
-		margin: 0 auto 2rem;
-		text-align: center;
+		margin: 0 auto;
+		text-align: center; /* Centered on mobile */
+	}
+	.footer-info h3, .footer-contact h4 {
+		color: var(--secondary);
+		margin-top: 0;
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+	.footer-info p {
+		opacity: 0.9;
+		max-width: 400px;
+		margin: 0 auto;
+	}
+	.footer-contact {
+		display: flex;
+		flex-direction: column;
+		align-items: center; /* Centered on mobile */
+		gap: 10px;
 	}
 	.footer-contact p {
-		margin: 0.5rem 0;
+		margin: 0;
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		gap: 0.5rem;
+		gap: 10px;
+		font-size: 1.1rem;
+	}
+	.footer-contact a {
+		color: var(--white);
+		text-decoration: none;
+		transition: color 0.3s;
+	}
+	.footer-contact a:hover {
+		color: var(--secondary);
+	}
+	.footer-bottom {
+		text-align: center;
+		padding-top: 2rem;
+		margin-top: 3rem;
+		border-top: 1px solid rgba(255,255,255,0.1);
+		font-size: 0.9rem;
+		opacity: 0.7;
 	}
 	
 	@media (min-width: 768px) {
-		.footer-container { grid-template-columns: 1fr 1fr; text-align: left; }
-		.footer-contact p { justify-content: flex-start; }
+		.footer-container { 
+			grid-template-columns: 1.5fr 1fr; /* Asymmetric for better balance */
+			text-align: left; 
+		}
+		.footer-info p {
+			margin: 0;
+		}
+		.footer-contact {
+			align-items: flex-start; /* Left-aligned on desktop */
+		}
 	}
 </style>
